@@ -14,13 +14,93 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      activity_log: {
+        Row: {
+          action: string
+          actor_id: string | null
+          admission_no: string | null
+          created_at: string
+          details: Json | null
+          id: string
+          student_id: string | null
+        }
+        Insert: {
+          action: string
+          actor_id?: string | null
+          admission_no?: string | null
+          created_at?: string
+          details?: Json | null
+          id?: string
+          student_id?: string | null
+        }
+        Update: {
+          action?: string
+          actor_id?: string | null
+          admission_no?: string | null
+          created_at?: string
+          details?: Json | null
+          id?: string
+          student_id?: string | null
+        }
+        Relationships: []
+      }
+      students: {
+        Row: {
+          address: string
+          admission_no: string
+          course: string
+          created_at: string
+          created_by: string | null
+          dob: string
+          email: string
+          gender: string
+          id: string
+          mobile: string
+          name: string
+          photo_url: string | null
+          updated_at: string
+          year: number
+        }
+        Insert: {
+          address: string
+          admission_no?: string
+          course: string
+          created_at?: string
+          created_by?: string | null
+          dob: string
+          email: string
+          gender: string
+          id?: string
+          mobile: string
+          name: string
+          photo_url?: string | null
+          updated_at?: string
+          year: number
+        }
+        Update: {
+          address?: string
+          admission_no?: string
+          course?: string
+          created_at?: string
+          created_by?: string | null
+          dob?: string
+          email?: string
+          gender?: string
+          id?: string
+          mobile?: string
+          name?: string
+          photo_url?: string | null
+          updated_at?: string
+          year?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      generate_admission_no: { Args: never; Returns: string }
     }
     Enums: {
       [_ in never]: never
