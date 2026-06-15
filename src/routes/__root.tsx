@@ -71,6 +71,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Pillai University — Student Management System" },
       { name: "description", content: "Manage student records: enrollment, photos, courses, and activity log." },
+      { property: "og:title", content: "Pillai University — Student Management System" },
+      { property: "og:description", content: "Manage student records: enrollment, photos, courses, and activity log." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Pillai University — Student Management System" },
+      { name: "twitter:description", content: "Manage student records: enrollment, photos, courses, and activity log." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
