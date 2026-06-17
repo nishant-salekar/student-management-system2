@@ -4,38 +4,29 @@ A full-stack Student Management System built for the Pillai University Junior Fu
 
 ## Live demo
 
-- **App:** _add your published URL after deploying_
-- **Sign in:** create an account on `/auth` (email + password or Google)
+LIVE URL : https://build-your-dream-630.lovable.app
 
 ## Features
 
 - Add / Edit / Drop students with the following fields: Name, Course, Year, Date of Birth, Email, Mobile, Gender, Address
 - **Auto-generated unique Admission Number** in the format `PU-YYYY-NNNN` (database sequence + trigger; unique constraint at the DB level)
-- Student photo upload (private storage bucket, long-lived signed URLs)
+- Student photo upload
 - View Student List in a paginated, searchable, filterable table
-- **Frontend validation** with `react-hook-form` + `zod`
-- **Backend validation** with Postgres `CHECK` constraints, `NOT NULL`, `UNIQUE`, and Row-Level Security
-- Responsive UI (sidebar + table collapse to mobile)
-- **Activity log** — every CREATE / UPDATE / DELETE is logged automatically by a DB trigger
 - Search by name / email / admission number
 - Filter by course
-- Server-side pagination (10 / page)
-- DB indexes on `name`, `email`, `course`, `admission_no`, `created_at` for fast search
+- Server-side pagination
 - Authentication: email/password + Google OAuth
 
 ## Tech stack
 
 | Layer        | Choice |
 | ------------ | ------ |
-| Frontend     | React 19 + TanStack Start (TanStack Router + Vite 7) |
+| Frontend     | React 19 + TanStack |
 | UI           | Tailwind CSS v4 + shadcn/ui |
 | Forms        | react-hook-form + zod |
-| Data         | TanStack Query |
 | Backend      | Lovable Cloud (Supabase: PostgreSQL + Auth + Storage) |
-| Database     | PostgreSQL (managed) |
-| Hosting      | Lovable (edge) |
+| Database     | PostgreSQL (managed)
 
-> The assignment asked for Node.js + Express. This implementation uses Supabase's auto-generated PostgREST APIs over a real PostgreSQL database, which fulfills the *spirit* of the REST API requirement (genuine REST endpoints, real Postgres, RLS-secured) without a hand-written Express server. The data model, validation, and feature set are identical.
 
 ## REST API endpoints (PostgREST, auto-generated)
 
@@ -50,7 +41,6 @@ The frontend uses the typed `supabase-js` client which calls these under the hoo
 | DELETE | `/rest/v1/students?id=eq.X` | Drop student |
 | GET    | `/rest/v1/activity_log`     | Activity log (read-only) |
 
-All endpoints require a bearer token (Supabase JWT) and are protected by RLS.
 
 ## Database schema
 
@@ -123,5 +113,5 @@ src/
 
 ## Submission
 
-- **Repo:** _add your GitHub link_
-- **Hosted:** _add your live URL_
+- Repo: https://github.com/nishant-salekar/student-management-system2
+- Hosted: https://build-your-dream-630.lovable.app
